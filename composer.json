@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "smoetje/eaton-easy-e4",
+    "description": "A simple PHP binding package wrapping the interaction with the built-in API of the Eaton Easy E4 programmable logic controller (PLC). For more information about the Eaton json API itself, browse to https://www.eaton.com/flash/eaton/json-api/Default.htm",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "smoetje",
+        "eaton-easy-e4"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/smoetje/eaton-easy-e4",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Nicolas Ramoudt",
+            "email": "nicolas.ramoudt@gmail.com",
             "role": "Developer"
         }
     ],
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Smoetje\\EatonEasyE4\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Smoetje\\EatonEasyE4\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -38,7 +38,10 @@
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
