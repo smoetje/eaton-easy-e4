@@ -22,14 +22,14 @@ class EatonEasyE4Class
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        $headers = array(
+        $headers = [
             "Accept: application/json",
             "Authorization: Bearer {$this->authorization}",
-        );
+        ];
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
         $dataArray = [
-            'elm' => "I(1)"
+            'elm' => "I(1)",
 //            'elm' => "O(1,64)"
         ];
         $data = http_build_query($dataArray);
@@ -43,21 +43,21 @@ class EatonEasyE4Class
 
 //        dump($getUrl);
 
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, TRUE);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_URL, $getUrl);
         curl_setopt($curl, CURLOPT_TIMEOUT, 80);
 
-//for debug only!
+        //for debug only!
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $response = curl_exec($curl);
 
-        if(curl_error($curl)){
+        if (curl_error($curl)) {
             echo 'Request Error:' . curl_error($curl);
-        }else{
+        } else {
 //            echo $response;
         }
 
